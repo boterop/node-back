@@ -1,4 +1,4 @@
-const prettierConfig = {
+export default {
   bracketSpacing: true,
   bracketSameLine: true,
   singleQuote: true,
@@ -11,5 +11,3 @@ const prettierConfig = {
   semi: true,
   insertPragma: false,
 };
-
-export default prettierConfig;

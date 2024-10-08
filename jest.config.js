@@ -1,4 +1,4 @@
-const logger = require('./config/logger');
+import './src/config/globals.js';
 
 // Load environment variables
 try {
@@ -11,9 +11,12 @@ process.env.NODE_ENV = 'test';
 process.env.JWT_SECRET = 'test-secret';
 process.env.JWT_EXPIRES_IN = '1h';
 
-module.exports = {
+export default {
   testEnvironment: 'node',
   moduleFileExtensions: ['js', 'json'],
+  moduleNameMapper: {
+    '^@src/(.*)$': '<rootDir>/src/$1',
+  },
   setupFiles: ['./tests/test_helper.js'],
   setupFilesAfterEnv: ['./tests/runtime.js'],
   transform: {

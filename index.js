@@ -1,18 +1,7 @@
-import './src/config/globals.js';
-import express from 'express';
-import cors from 'cors';
-import guardian from './src/middlewares/guardian.js';
+import app from '@src/app.js';
 
-const app = express();
+const port = process.env.PORT || 3000;
 
-app.use(cors());
-app.use(express.json());
-app.use(guardian);
-
-app.get('/api', (_req, res) => {
-  res.send('Hello World!');
-});
-
-app.listen(3000, () => {
-  logger.info('Server is running on port 3000');
+app.listen(port, () => {
+  logger.info(`Server is running on port ${port}`);
 });
